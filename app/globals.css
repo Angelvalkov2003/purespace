@@ -2,7 +2,10 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
+  --primary: #5682b1;
+  --primary-light: #739ec9;
+  --accent: #739ec9;
 }
 
 @theme inline {
@@ -12,15 +15,52 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom select dropdown styles */
+select option {
+  background-color: white;
+  color: #000000;
+  padding: 0.75rem;
+  font-weight: 500;
+}
+
+select option:hover {
+  background-color: #739ec9;
+  color: white;
+}
+
+select option:checked,
+select option:focus {
+  background-color: #739ec9;
+  color: white;
+}
+
+select option:disabled {
+  background-color: white;
+  color: rgba(86, 130, 177, 0.7);
+}
+
+/* Carousel animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
 }

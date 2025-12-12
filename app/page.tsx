@@ -107,8 +107,16 @@ export default function Home() {
       </section>
 
       {/* Who We Are Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-[#739EC9]/10">
-        <div className="max-w-6xl mx-auto">
+      <section
+        className="py-20 px-4 relative"
+        style={{
+          backgroundImage: "url(/background.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-[#5682B1] mb-6">

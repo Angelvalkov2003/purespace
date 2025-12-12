@@ -9,8 +9,17 @@ export default function AboutPage() {
   const paragraphs = t.about.text.split('\n\n');
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div 
+      className="min-h-screen relative"
+      style={{
+        backgroundImage: 'url(/background.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+      }}
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <h1 className="text-4xl md:text-5xl font-bold text-[#5682B1] mb-12 text-center">
           {t.about.title}
         </h1>

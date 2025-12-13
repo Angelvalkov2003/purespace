@@ -4,6 +4,7 @@ import { useLocale } from "@/contexts/LocaleContext";
 import Link from "next/link";
 import Image from "next/image";
 import DomestinaBadge from "@/components/DomestinaBadge";
+import AnimatedSection from "@/components/AnimatedSection";
 import { useEffect, useState, useRef } from "react";
 
 export default function Home() {
@@ -59,20 +60,22 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* Subscription Section */}
       <section className="bg-gradient-to-r from-[#5682B1] to-[#739EC9] text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t.home.subscriptionTitle}
-          </h2>
-          <p className="text-lg md:text-xl mb-8 text-white/90">
-            {t.home.subscriptionSubtitle}
-          </p>
-          <a
-            href="tel:+359888888888"
-            className="inline-block bg-white text-[#5682B1] px-8 py-4 rounded-md font-semibold text-lg hover:bg-[#739EC9] hover:text-white transition-colors"
-          >
-            {t.home.callNow}
-          </a>
-        </div>
+        <AnimatedSection>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              {t.home.subscriptionTitle}
+            </h2>
+            <p className="text-lg md:text-xl mb-8 text-white/90">
+              {t.home.subscriptionSubtitle}
+            </p>
+            <a
+              href="tel:+359888888888"
+              className="inline-block bg-white text-[#5682B1] px-8 py-4 rounded-md font-semibold text-lg hover:bg-[#739EC9] hover:text-white transition-colors"
+            >
+              {t.home.callNow}
+            </a>
+          </div>
+        </AnimatedSection>
       </section>
 
       {/* Happy Clients Section */}
@@ -96,14 +99,16 @@ export default function Home() {
 
       {/* Work By Rules Section */}
       <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#000000] mb-6">
-            {t.home.workByRules}
-          </h2>
-          <p className="text-lg text-[#000000]/80 leading-relaxed">
-            {t.home.workByRulesText}
-          </p>
-        </div>
+        <AnimatedSection>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#000000] mb-6">
+              {t.home.workByRules}
+            </h2>
+            <p className="text-lg text-[#000000]/80 leading-relaxed">
+              {t.home.workByRulesText}
+            </p>
+          </div>
+        </AnimatedSection>
       </section>
 
       {/* Who We Are Section */}
@@ -118,43 +123,47 @@ export default function Home() {
       >
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#5682B1] mb-6">
-                {t.home.whoWeAre}
-              </h2>
-              <p className="text-lg text-[#000000]/80 leading-relaxed mb-4">
-                {t.home.whoWeAreText}
-              </p>
-              <p className="text-lg text-[#000000]/80 leading-relaxed">
-                {t.home.whoWeAreText2}
-              </p>
-            </div>
-            <div className="flex gap-6 justify-center">
-              <div className="flex flex-col items-center">
-                <Image
-                  src="/kristiqn.jpg"
-                  alt="Кристиан Софрониев"
-                  width={200}
-                  height={200}
-                  className="rounded-lg object-cover aspect-square"
-                />
-                <p className="mt-4 text-lg font-semibold text-[#000000]">
-                  Кристиан Софрониев
+            <AnimatedSection>
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-[#5682B1] mb-6">
+                  {t.home.whoWeAre}
+                </h2>
+                <p className="text-lg text-[#000000]/80 leading-relaxed mb-4">
+                  {t.home.whoWeAreText}
+                </p>
+                <p className="text-lg text-[#000000]/80 leading-relaxed">
+                  {t.home.whoWeAreText2}
                 </p>
               </div>
-              <div className="flex flex-col items-center">
-                <Image
-                  src="/atanasi.JPG"
-                  alt="Атанаси Александров"
-                  width={200}
-                  height={200}
-                  className="rounded-lg object-cover aspect-square"
-                />
-                <p className="mt-4 text-lg font-semibold text-[#000000]">
-                  Атанаси Александров
-                </p>
+            </AnimatedSection>
+            <AnimatedSection delay={0.2}>
+              <div className="flex gap-6 justify-center">
+                <div className="flex flex-col items-center">
+                  <Image
+                    src="/kristiqn.jpg"
+                    alt="Кристиан Софрониев"
+                    width={200}
+                    height={200}
+                    className="rounded-lg object-cover aspect-square"
+                  />
+                  <p className="mt-4 text-lg font-semibold text-[#000000]">
+                    Кристиан Софрониев
+                  </p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <Image
+                    src="/atanasi.JPG"
+                    alt="Атанаси Александров"
+                    width={200}
+                    height={200}
+                    className="rounded-lg object-cover aspect-square"
+                  />
+                  <p className="mt-4 text-lg font-semibold text-[#000000]">
+                    Атанаси Александров
+                  </p>
+                </div>
               </div>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>

@@ -36,6 +36,31 @@ export async function POST(request: Request) {
       );
     }
 
+    // Function to get service name from key
+    const getServiceName = (serviceKey: string): string => {
+      const serviceNames: Record<string, { bg: string; en: string }> = {
+        // Cleaning services
+        basic: { bg: 'Основно почистване', en: 'Basic Cleaning' },
+        postRenovation: { bg: 'Почистване след ремонт', en: 'Post-Renovation Cleaning' },
+        furniture: { bg: 'Пране на мека мебел', en: 'Upholstery Cleaning' },
+        carpet: { bg: 'Пране на мокет и килими', en: 'Carpet and Rug Cleaning' },
+        windows: { bg: 'Почистване на прозорци и витрини', en: 'Window and Display Cleaning' },
+        car: { bg: 'Мобилно почистване на автомобили', en: 'Mobile Car Cleaning' },
+        subscription: { bg: 'Абонаментно почистване', en: 'Subscription Cleaning' },
+        // Landscaping services
+        design: { bg: 'Проектиране и ландшафтен дизайн', en: 'Design and Landscape Design' },
+        maintenance: { bg: 'Поддръжка на градини и зелени площи', en: 'Garden and Green Space Maintenance' },
+        creation: { bg: 'Създаване на зелени площи и озеленяване на дворове', en: 'Creating Green Spaces and Yard Landscaping' },
+        pruning: { bg: 'Подрязване и оформяне на дървета и храсти', en: 'Tree and Shrub Pruning and Shaping' },
+        turf: { bg: 'Полагане на тревни чимове', en: 'Turf Installation' },
+      };
+
+      // Default to Bulgarian, can be enhanced to detect language from request
+      return serviceNames[serviceKey]?.bg || serviceNames[serviceKey]?.en || serviceKey;
+    };
+
+    const serviceName = service ? getServiceName(service) : null;
+
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     // Format HTML email
@@ -84,11 +109,11 @@ export async function POST(request: Request) {
                           </p>
                         </td>
                       </tr>
-                      ${service ? `
+                      ${serviceName ? `
                       <tr>
                         <td style="padding: 12px 0; border-bottom: 1px solid #e5e5e5;">
                           <strong style="color: #5682B1; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">Услуга</strong>
-                          <p style="margin: 4px 0 0 0; color: #333333; font-size: 16px;">${service}</p>
+                          <p style="margin: 4px 0 0 0; color: #333333; font-size: 16px;">${serviceName}</p>
                         </td>
                       </tr>
                       ` : ''}

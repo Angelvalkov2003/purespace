@@ -178,49 +178,19 @@ export default function Home() {
         }}
       >
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <AnimatedSection>
-              <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-[#5682B1] mb-6">
-                  {t.home.whoWeAre}
-                </h2>
-                <p className="text-lg text-[#000000]/80 leading-relaxed mb-4">
-                  {t.home.whoWeAreText}
-                </p>
-                <p className="text-lg text-[#000000]/80 leading-relaxed">
-                  {t.home.whoWeAreText2}
-                </p>
-              </div>
-            </AnimatedSection>
-            <AnimatedSection delay={0.2}>
-              <div className="flex gap-6 justify-center">
-                <div className="flex flex-col items-center">
-                  <Image
-                    src="/kristiqn.jpg"
-                    alt="Кристиан Софрониев"
-                    width={200}
-                    height={200}
-                    className="rounded-lg object-cover aspect-square"
-                  />
-                  <p className="mt-4 text-lg font-semibold text-[#000000]">
-                    Кристиан Софрониев
-                  </p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Image
-                    src="/atanasi.JPG"
-                    alt="Атанаси Александров"
-                    width={200}
-                    height={200}
-                    className="rounded-lg object-cover aspect-square"
-                  />
-                  <p className="mt-4 text-lg font-semibold text-[#000000]">
-                    Атанаси Александров
-                  </p>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
+          <AnimatedSection>
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#5682B1] mb-6">
+                {t.home.whoWeAre}
+              </h2>
+              <p className="text-lg text-[#000000]/80 leading-relaxed mb-4">
+                {t.home.whoWeAreText}
+              </p>
+              <p className="text-lg text-[#000000]/80 leading-relaxed">
+                {t.home.whoWeAreText2}
+              </p>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
